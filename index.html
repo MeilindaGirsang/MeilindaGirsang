@@ -8,11 +8,6 @@
   <!-- SEO -->
   <meta name="description" content="Meilinda Debora Girsang‑Hofstee — Entrepreneur, MBA, Founder & CEO at PT Sehat Investasi Digital. Leading digital healthcare platforms with a personal touch.">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Meilinda Debora Girsang‑Hofstee">
-  <meta property="og:description" content="Entrepreneur, MBA, Founder of PT Sehat Investasi Digital — leading digital healthcare platforms including BaliDoc, TouristPharmacy, and BaliPharma.">
-  <meta property="og:type" content="website">
-
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
@@ -26,9 +21,9 @@
 
     .container { max-width: 900px; margin:auto; padding:50px 20px; text-align:center; }
 
-    h1 { font-size:3em; margin-bottom:10px; font-weight:700; }
-    h2 { font-size:2em; margin-top:60px; margin-bottom:25px; color:#222; }
-    p { font-size:1.1em; color:#555; line-height:1.7; margin-bottom:20px; }
+    h1 { font-size:3em; margin-bottom:10px; font-weight:700; opacity:0; transform:translateY(20px); transition: all 0.8s ease;}
+    h2 { font-size:2em; margin-top:60px; margin-bottom:25px; color:#222; opacity:0; transform:translateY(20px); transition: all 0.8s ease;}
+    p { font-size:1.1em; color:#555; line-height:1.7; margin-bottom:20px; opacity:0; transform:translateY(20px); transition: all 0.8s ease; }
 
     .linkedin-button {
       display:inline-block;
@@ -41,6 +36,7 @@
       border-radius:10px;
       box-shadow:0 4px 12px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
+      opacity:0; transform:translateY(20px); transition: all 0.8s ease;
     }
     .linkedin-button:hover { background:#005582; transform:translateY(-2px); }
 
@@ -51,11 +47,13 @@
       box-shadow:0 6px 18px rgba(0,0,0,0.06);
       margin:20px 0;
       text-align:left;
-      transition: all 0.4s ease;
+      transition: all 0.5s ease;
+      opacity:0;
+      transform:translateY(30px);
     }
-    .venture-card:hover {
-      box-shadow:0 10px 30px rgba(0,0,0,0.12);
-      transform: translateY(-3px);
+    .venture-card.visible {
+      opacity:1;
+      transform:translateY(0);
     }
     .venture-card h3 { margin-top:0; margin-bottom:10px; font-weight:600; color:#0073b1; }
     .venture-card p { margin-bottom:15px; color:#444; }
@@ -73,6 +71,7 @@
 
     .skills-list {
       display:flex; flex-wrap:wrap; justify-content:center; gap:12px; padding:0; list-style:none; margin-top:20px;
+      opacity:0; transform:translateY(20px); transition: all 0.8s ease;
     }
     .skills-list li {
       background: linear-gradient(135deg,#c8e6ff,#0073b1);
@@ -97,37 +96,37 @@
 
   <div class="container">
     <!-- Header -->
-    <h1>Meilinda Debora Girsang‑Hofstee</h1>
-    <p>Entrepreneur • MBA • Founder & Digital Healthcare Leader</p>
-    <a href="https://www.linkedin.com/in/meilindagirsang/" target="_blank" class="linkedin-button">Connect on LinkedIn</a>
+    <h1 class="fade-in">Meilinda Debora Girsang‑Hofstee</h1>
+    <p class="fade-in">Entrepreneur • MBA • Founder & Digital Healthcare Leader</p>
+    <a href="https://www.linkedin.com/in/meilindagirsang/" target="_blank" class="linkedin-button fade-in">Connect on LinkedIn</a>
 
     <!-- Ventures -->
-    <h2>Current Ventures</h2>
-    <div class="venture-card">
+    <h2 class="fade-in">Current Ventures</h2>
+    <div class="venture-card"> 
       <h3>BaliDoc.com</h3>
       <p>Telemedicine, prescriptions, and delivery services for visitors and residents in Bali. Built with a focus on seamless digital experience and innovation.</p>
       <a href="https://www.balidoc.com" target="_blank" class="site-button">Visit Website</a>
     </div>
-    <div class="venture-card">
+    <div class="venture-card"> 
       <h3>BaliPharma.com</h3>
       <p>Online pharmacy platform connected to local licensed pharmacies, ensuring fast and reliable access to medications.</p>
       <a href="https://www.balipharma.com" target="_blank" class="site-button">Visit Website</a>
     </div>
-    <div class="venture-card">
+    <div class="venture-card"> 
       <h3>TouristPharmacy.com</h3>
-      <p>Medication coordination service for tourists, integrating tech solutions with healthcare compliance.</p>
+      <p>Pre-launch one-page website for tourists looking for healthcare services in Bali.</p>
       <a href="https://www.touristpharmacy.com" target="_blank" class="site-button">Visit Website</a>
     </div>
-    <div class="venture-card">
+    <div class="venture-card"> 
       <h3>TouristHealthcare.com</h3>
       <p>Digital resource to guide international visitors through healthcare options and services in Bali.</p>
       <a href="https://www.touristhealthcare.com" target="_blank" class="site-button">Visit Website</a>
     </div>
 
     <!-- Skills & Studies -->
-    <h2>Strengths & Expertise</h2>
-    <p>Combining my MBA, engineering, and computer science background with years of experience in entrepreneurship, technology consulting, and digital healthcare:</p>
-    <ul class="skills-list">
+    <h2 class="fade-in">Strengths & Expertise</h2>
+    <p class="fade-in">Combining my MBA, engineering, and computer science background with years of experience in entrepreneurship, technology consulting, and digital healthcare:</p>
+    <ul class="skills-list fade-in">
       <li>Digital Transformation & Innovation</li>
       <li>Business Strategy & Leadership</li>
       <li>Healthcare & Digital Platforms</li>
@@ -140,6 +139,25 @@
 
   </div>
 
+  <script>
+    // Fade-in animation on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const cards = document.querySelectorAll('.venture-card');
+
+    const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+    cards.forEach(card => appearOnScroll.observe(card));
+  </script>
+
 </body>
 </html>
-
