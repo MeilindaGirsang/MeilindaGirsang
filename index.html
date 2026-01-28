@@ -18,93 +18,105 @@
     body {
       font-family: 'Inter', sans-serif;
       margin:0; padding:0;
-      background: #f5f7fa;
+      background:#f9fafc;
       color:#1a1a1a;
     }
 
-    .container { max-width: 1000px; margin:auto; padding:40px 20px; }
-    header { display:flex; flex-wrap:wrap; align-items:center; margin-bottom:50px; }
-    .profile-photo { flex:0 0 150px; width:150px; height:150px; border-radius:50%; object-fit:cover; margin-right:30px; }
+    .container { max-width: 1000px; margin:auto; padding:50px 20px; }
+    header { display:flex; flex-wrap:wrap; align-items:center; margin-bottom:60px; }
+    .profile-photo { flex:0 0 160px; width:160px; height:160px; border-radius:50%; object-fit:cover; margin-right:40px; border:3px solid #0073b1; }
     header .intro { flex:1; }
-    header h1 { font-size:2.5em; margin-bottom:5px; }
-    header p { font-size:1.2em; color:#555; }
+    header h1 { font-size:2.8em; margin-bottom:10px; }
+    header p { font-size:1.3em; color:#555; margin-bottom:10px; }
 
-    h2 { margin-top:60px; margin-bottom:20px; font-size:1.8em; color:#222; border-bottom:2px solid #e0e0e0; padding-bottom:5px; }
-    p { margin-bottom:15px; line-height:1.6; }
-    ul { margin-left:20px; margin-bottom:20px; }
-    ul li { margin-bottom:8px; }
+    h2 { margin-top:50px; margin-bottom:25px; font-size:2em; color:#222; border-bottom:2px solid #e0e0e0; padding-bottom:5px; }
+    p { margin-bottom:18px; line-height:1.7; }
+    ul { margin-left:0; padding-left:0; margin-bottom:20px; list-style:none; }
+    ul li { margin-bottom:12px; }
 
-    .linkedin-button {
+    .button-group { display:flex; flex-wrap:wrap; gap:12px; margin-top:15px; }
+    .site-button {
       display:inline-block;
-      margin-top:20px;
-      padding:14px 24px;
+      padding:12px 22px;
       background:#0073b1;
       color:#fff;
-      text-decoration:none;
       font-weight:600;
+      text-decoration:none;
       border-radius:6px;
       transition:all 0.3s ease;
     }
-    .linkedin-button:hover { background:#005582; }
+    .site-button:hover { background:#005582; }
 
-    .venture-list li a { color:#0073b1; text-decoration:none; }
-    .venture-list li a:hover { text-decoration:underline; }
+    .venture-card {
+      background:white;
+      padding:20px;
+      border-radius:8px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom:20px;
+      transition:all 0.3s ease;
+    }
+    .venture-card:hover { box-shadow:0 6px 16px rgba(0,0,0,0.1); }
 
-    @media (max-width:700px){
+    @media (max-width:750px){
       header { flex-direction:column; align-items:center; text-align:center; }
-      .profile-photo { margin-right:0; margin-bottom:20px; }
+      .profile-photo { margin-right:0; margin-bottom:25px; }
+      .button-group { justify-content:center; }
     }
   </style>
 </head>
 <body>
 
   <div class="container">
+
     <!-- Header -->
     <header>
       <img src="YOUR_PHOTO_URL_HERE" alt="Meilinda Debora Girsang‑Hofstee" class="profile-photo">
       <div class="intro">
         <h1>Meilinda Debora Girsang‑Hofstee</h1>
         <p>Entrepreneur • MBA • Founder & Digital Healthcare Leader</p>
-        <a href="https://www.linkedin.com/in/meilindagirsang/" target="_blank" class="linkedin-button">Connect on LinkedIn</a>
+        <a href="https://www.linkedin.com/in/meilindagirsang/" target="_blank" class="site-button">Connect on LinkedIn</a>
       </div>
     </header>
 
-    <!-- About -->
-    <section>
-      <h2>About Me</h2>
-      <p>
-        Indonesian-born entrepreneur and technology consultant with a Master of Business Administration from Maastricht School of Management and a double Bachelor's in Industrial Engineering & Information Systems from BINUS University. 
-        I bridge technology, business, and healthcare to create scalable digital solutions and lead ventures from concept to execution.
-      </p>
-    </section>
-
-    <!-- Skills & Expertise -->
-    <section>
-      <h2>Skills & Expertise</h2>
-      <ul>
-        <li>Digital Transformation & Innovation Management</li>
-        <li>Business Strategy, Corporate Responsibility, Change Management</li>
-        <li>Technology Consulting & Pega Implementation (Banking, Fintech, KYC, CLM)</li>
-        <li>Healthcare & Digital Platform Development (Telemedicine, Online Pharmacies)</li>
-        <li>Entrepreneurship, Venture Creation & Start-up Leadership</li>
-        <li>Project Management, Systems Analysis, ERP Implementation</li>
-        <li>Data Analytics, Big Data, Industry 4.0 & Cybersecurity</li>
-        <li>Cross-cultural Leadership & Organizational Behavior</li>
-      </ul>
-    </section>
-
     <!-- Ventures -->
     <section>
-      <h2>Founder & CEO — PT Sehat Investasi Digital</h2>
-      <ul class="venture-list">
-        <li><strong>BaliDoc.com</strong> – Telemedicine, prescription services, and delivery for visitors and residents. (<a href="https://www.balidoc.com/">balidoc.com</a>)</li>
-        <li><strong>TouristPharmacy.com</strong> – WhatsApp-based medication coordination with licensed pharmacies. (<a href="https://www.touristpharmacy.com/">touristpharmacy.com</a>)</li>
-        <li><strong>BaliPharma.com</strong> – Online pharmacy platform integrated with local networks.</li>
-        <li><strong>TouristHealthcare.com</strong> – Digital resource for healthcare navigation for international visitors.</li>
+      <h2>Current Ventures</h2>
+      <p>I lead multiple digital healthcare platforms designed for tourists, expats, and global users. These ventures combine my expertise in technology, business strategy, and digital transformation:</p>
+      <div class="venture-card">
+        <h3>BaliDoc.com</h3>
+        <p>Telemedicine, prescriptions, and delivery services for visitors and residents in Bali. Built with focus on digital innovation, patient experience, and seamless service.</p>
+        <a href="https://www.balidoc.com" target="_blank" class="site-button">Visit Website</a>
+      </div>
+      <div class="venture-card">
+        <h3>BaliPharma.com</h3>
+        <p>Online pharmacy platform connected to local licensed pharmacies, ensuring fast and reliable access to medications.</p>
+        <a href="https://www.balipharma.com" target="_blank" class="site-button">Visit Website</a>
+      </div>
+      <div class="venture-card">
+        <h3>TouristPharmacy.com</h3>
+        <p>WhatsApp-based medication coordination service for tourists, integrating tech solutions with healthcare compliance.</p>
+        <a href="https://www.touristpharmacy.com" target="_blank" class="site-button">Visit Website</a>
+      </div>
+      <div class="venture-card">
+        <h3>TouristHealthcare.com</h3>
+        <p>Digital resource to guide international visitors through healthcare options and services in Bali.</p>
+        <a href="https://www.touristhealthcare.com" target="_blank" class="site-button">Visit Website</a>
+      </div>
+    </section>
+
+    <!-- Skills & Studies -->
+    <section>
+      <h2>Skills & Expertise</h2>
+      <p>Drawing on my education and extensive experience, I specialize in bridging technology, business strategy, and digital innovation. My background enables me to lead ventures that are both technically sophisticated and strategically sound:</p>
+      <ul>
+        <li><strong>Digital Transformation & Innovation:</strong> MBA specialization in Digital Economy, Industry 4.0, Big Data, and Cybersecurity.</li>
+        <li><strong>Technology Consulting:</strong> Pega Certified Senior System Architect, with experience in banking, fintech, KYC, and CLM systems.</li>
+        <li><strong>Entrepreneurship & Venture Leadership:</strong> Founded multiple start-ups, scaled operations, and delivered measurable ROI using digital strategies.</li>
+        <li><strong>Healthcare & Digital Platforms:</strong> Telemedicine, online pharmacies, and integrated healthcare platforms for global users.</li>
+        <li><strong>Business Strategy & Analytics:</strong> MBA coursework in Corporate Strategy, Global Supply Chain, Finance, Decision Making, and Leadership.</li>
+        <li><strong>Engineering & IT Expertise:</strong> Double Bachelor's in Industrial Engineering & Information Systems, ERP, process modeling, and software development.</li>
+        <li><strong>Cross-cultural Leadership & Organizational Management:</strong> Experience managing teams and projects across Europe and Indonesia.</li>
       </ul>
-      <p>
-        All platforms are built with regulatory compliance and ethical standards at their core.
-      </p>
     </section>
 
   </div>
