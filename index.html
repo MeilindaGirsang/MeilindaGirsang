@@ -79,7 +79,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.1rem 5rem;display:
 .photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .photo-accent{position:absolute;bottom:-10px;right:-10px;width:60%;height:60%;border:2px solid var(--accent);opacity:.18;border-radius:2px;pointer-events:none;z-index:-1}
 .hero-kpis{display:flex;gap:0;width:min(240px,100%);border:1px solid var(--bd-md);border-radius:3px;overflow:hidden;background:var(--card)}
-.kpi{flex:1;padding:1.1rem .8rem;text-align:center;border-right:1px solid var(--bd)}
+.kpi{flex:1;min-width:0;padding:1.1rem .5rem;text-align:center;border-right:1px solid var(--bd)}
 .kpi:last-child{border-right:none}
 .kpi-n{font-family:'DM Serif Display',serif;font-size:1.7rem;color:var(--accent);line-height:1;margin-bottom:.25rem}
 .kpi-l{font-size:.58rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-35);line-height:1.4}
@@ -227,14 +227,26 @@ footer a:hover{color:var(--accent)}
 
 /* ─── RESPONSIVE ────────────────────────────────────── */
 @media(max-width:960px){
-  nav{padding:1rem 1.5rem}.nav-links{display:none}
+  nav{padding:.8rem 1.5rem}
+  .nav-links li:not(:last-child){display:none}
+  .nav-cta{padding:.6rem 1rem!important;display:inline-block}
   section{padding:5rem 1.5rem}
   .hero{grid-template-columns:1fr;padding:7rem 1.5rem 4rem;min-height:auto;gap:3rem}
-  .hero-visual{order:-1}.photo-wrap,.hero-kpis{max-width:200px}
+  .hero-visual{order:-1}
   .mi{grid-template-columns:1fr;gap:3rem}
   .v-header{flex-direction:column;align-items:flex-start}
   .vg{grid-template-columns:1fr}
-  .ch{padding:1.8rem 1.5rem}.ch-head{flex-direction:column;gap:.6rem}.ch-list{grid-template-columns:1fr}
+  .vc{padding:2rem 1.5rem 1.6rem}
+  .vc-name{font-size:1.5rem;overflow-wrap:anywhere}
+  .vc-link{padding:.8rem 0;margin:-.8rem 0}
+  .ch{padding:1.8rem 1.5rem}.ch-head{flex-direction:column;gap:.6rem}.ch-title{white-space:normal}.ch-list{grid-template-columns:1fr}
+  .ch-item{padding:0}.ch-item a{padding:.8rem 0;flex:1}
+  .kpi-l{font-size:.62rem;letter-spacing:.08em}
+  .badge{font-size:.62rem}
+  .scroll-label,.m-gap-label,.fc-label,.cred-merit,.cd-label{font-size:.66rem}
+  .footer-links a{padding:.7rem .3rem;display:inline-block}
+  .tl-item{flex-wrap:wrap;row-gap:.15rem}
+  .tl-text{flex-basis:100%;padding-left:calc(9px + 1.2rem)}
   .fi{grid-template-columns:1fr;gap:3rem}
   .og{grid-template-columns:1fr}
   .metrics{grid-template-columns:1fr;gap:2rem}.metric-div{display:none}
