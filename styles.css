@@ -77,8 +77,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Hero */
 .hero { position: relative; min-height: 100svh; display: grid; align-items: center; padding-block: 7rem 3rem; }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
-.hero h1 { font-size: clamp(2.6rem, 6.6vw, 5.6rem); margin: 1.25rem 0 0; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: clamp(2rem, 4vw, 3.5rem); align-items: center; }
+.hero h1 { font-size: clamp(2.4rem, 4.9vw, 4.4rem); margin: 1.25rem 0 0; }
 .hero h1 .hot { color: var(--hot); display: block; }
 .hero-sub { font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: var(--muted); max-width: 38ch; margin-top: 1.75rem; }
 .hero-sub b { color: var(--ink); font-weight: 500; }
